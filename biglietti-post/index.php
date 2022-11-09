@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biglietti</title>
+    <title>Biglietti V2 - post</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -12,8 +12,25 @@
 </head>
 <body>
 
+<?php
+$price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$multiplier_name = filter_input(INPUT_POST, 'train');
+
+if (!($price && $multiplier_name)) {
+    $reply = "";
+} else {
+    $train_multiplier = explode(":", $multiplier_name)[0];
+    $train_name = explode(":", $multiplier_name)[1];
+
+    $price = $price * $train_multiplier;
+
+    $reply = "<h4>Il Treno utilizzato è il " . $train_name . "</h4>";
+    $reply .= "<h4>Il prezzo del biglietto è " . $price . "€</h4>";
+}
+?>
+
 <div class="container mt-5">
-    <form action="utils/ticket_price.php">
+    <form method="post">
         <div class="form-group">
             <!-- Price input -->
             <div class="row">
@@ -37,15 +54,15 @@
                 <div class="col-12 col-md-6" style="text-align: center;">
                     <select name="train" id="trains" class="form-select w-100">
                         <option selected disabled>Scegli Treno</option>
-                        <option value="0.7">Freccia Rossa Seconda classe</option>
-                        <option value="1.2">Freccia Rossa Prima classe</option>
-                        <option value="2">Freccia Rossa Premium</option>
+                        <option value="0.7:Freccia Rossa Seconda Classe">Freccia Rossa Seconda classe</option>
+                        <option value="1.2:Freccia Rossa Prima Classe">Freccia Rossa Prima classe</option>
+                        <option value="2:Freccia Rossa Premium">Freccia Rossa Premium</option>
                     </select>
                 </div>
             </div>
 
             <!-- Buttons -->
-            <div class="container mt-5" style="text-align: center">
+            <div class="container mt-5 mb-5" style="text-align: center">
                 <button type="submit" class="btn btn-primary">Invia</button>
                 <button type="reset" class="btn btn-danger">Annulla</button>
             </div>
@@ -53,8 +70,8 @@
             <hr>
 
             <!-- Result -->
-            <div>
-
+            <div class="container mt-5" style="text-align: center">
+                <?= $reply; ?>
             </div>
         </div>
     </form>

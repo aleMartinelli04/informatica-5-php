@@ -27,7 +27,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container px-3">
     <div class="row">
         <div class="col-md-12">
             <h1>Pages in this project</h1>
