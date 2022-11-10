@@ -17,7 +17,7 @@ $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 $multiplier_name = filter_input(INPUT_POST, 'train');
 
 if (!($price && $multiplier_name)) {
-    $reply = "";
+    $reply = "Inserisci i valori richiesti";
 } else {
     $train_multiplier = explode(":", $multiplier_name)[0];
     $train_name = explode(":", $multiplier_name)[1];
