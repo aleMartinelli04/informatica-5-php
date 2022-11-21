@@ -46,21 +46,28 @@
     </div>
 
     <div class="container text-center mt-3">
-        <?php
-        $max = 0;
-        $maxName = '';
+        <h3>
+            <?php
+            if ($total == 0) {
+                echo "Nessun evento prenotato";
+            } else {
+                $max = 0;
+                $maxName = '';
 
-        foreach ($_SESSION['events'] as $name => $partecipants) {
-            if ($partecipants > $max) {
-                $max = $partecipants;
-                $maxName = $name;
+                foreach ($_SESSION['events'] as $name => $partecipants) {
+                    if ($partecipants > $max) {
+                        $max = $partecipants;
+                        $maxName = $name;
+                    }
+                }
+
+                echo "Evento con più partecipanti: '$maxName' con $max partecipanti!";
             }
-        }
+            ?>
+        </h3>
 
-        echo "<h3>Evento con più partecipanti: '$maxName' con $max partecipanti!</h3>";
-        ?>
-
-        <a href="../utils/reset.php" class="btn btn-primary">Torna alla pagina iniziale</a>
+        <a href="../index.php" class="btn btn-primary">Torna alla pagina iniziale</a>
+        <a href="../utils/reset.php" class="btn btn-danger">Reset</a>
     </div>
 </div>
 
