@@ -26,15 +26,15 @@
             <tbody>
 
             <?php foreach ($meteo as $date => $data) : ?>
-            <tr>
-                <td><?= date('d/m/Y', $date); ?></td>
-                <td><?= date('H:m:s', $date); ?></td>
-                <td><?= $data['max']; ?></td>
-                <td><?= $data['min']; ?></td>
-            </tr>
-            </tbody>
+                <tr>
+                    <td><?= date('d/m/Y', $date); ?></td>
+                    <td><?= date('H:m:s', $date); ?></td>
+                    <td><?= $data['max']; ?></td>
+                    <td><?= $data['min']; ?></td>
+                </tr>
             <?php endforeach; ?>
 
+            </tbody>
         </table>
     <?php endforeach; ?>
 
