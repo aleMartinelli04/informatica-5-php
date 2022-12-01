@@ -14,15 +14,12 @@
     <!-- Max, min and average temperature for each city -->
     <?php
     foreach ($_SESSION['meteo'] as $city => $meteo) {
-        $max = 0;
-        $min = 0;
+        $max = max(array_column($meteo, 'max'));
+        $min = min(array_column($meteo, 'min'));
+
         $tot = 0;
         $count = 0;
-
         foreach ($meteo as $date => $data) {
-            $max = max($max, $data['max']);
-            $min = min($min, $data['min']);
-
             $tot += $data['max'] + $data['min'];
             $count += 2;
         }
