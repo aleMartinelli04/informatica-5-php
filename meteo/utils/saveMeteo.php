@@ -22,4 +22,4 @@ $_SESSION['meteo'][$city][$time] = array(
     'min' => $min
 );
 
-header("Location: ../index.php");
+header("Location: ../index.php.php");
