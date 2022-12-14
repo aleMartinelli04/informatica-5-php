@@ -27,16 +27,19 @@ $students = getAll($pdo);
             <th scope="col">Name</th>
             <th scope="col">Surname</th>
             <th scope="col">CF</th>
+            <th scope="col">Registered</th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($students as $student): ?>
             <tr>
-                <td><?php echo $student["id"] ?></td>
-                <td><?php echo $student["name"] ?></td>
-                <td><?php echo $student["surname"] ?></td>
-                <td><?php echo $student["cf"] ?></td>
+                <th scope="row"><?= $student["id"] ?></th>
+                <td><?= $student["name"] ?></td>
+                <td><?= $student["surname"] ?></td>
+                <td><?= $student["cf"] ?></td>
+                <td><?= $student["registered"] ? "Si" : "No" ?></td>
+
                 <td>
                     <form method="POST" action="delete.php">
                         <input type="hidden" name="id" value="<?php echo $student["id"] ?>">

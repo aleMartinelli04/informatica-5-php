@@ -21,7 +21,7 @@ try {
 }
 ?>
 
-<div class="container text-center mt-5">
+<div class="container text-center mt-5 w-50 m-auto">
     <form action="save_data.php" method="POST">
         <!-- name field -->
         <div class="mb-3">
@@ -41,6 +41,11 @@ try {
             <input type="text" class="form-control" id="cf" name="cf" placeholder="Enter your CF">
         </div>
 
+        <!-- registered field -->
+        <div class="mb-3">
+            <input type="checkbox" id="registered" name="registered">
+            <label for="registered" class="form-label">Registered</label>
+        </div>
 
         <!-- submit button -->
         <button type="submit" class="btn btn-primary">Submit</button>
