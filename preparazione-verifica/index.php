@@ -1,4 +1,4 @@
-<?php require_once 'scripts/set_states.php'; ?>
+<?php require_once 'setup/setup.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
