@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (!isset($_SESSION['states'])) {
     $states = array(
         array("name" => "Italy", "age" => 18),
