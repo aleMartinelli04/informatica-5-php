@@ -24,6 +24,18 @@ class PDOSingleton
         self::$instance = new PDO($dsn, USER, PASSWORD, $options);
     }
 
+    public static function run($sql, ...$args)
+    {
+        if (!$args) {
+            return self::getInstance()->query($sql);
+        }
+
+        $statement = self::getInstance()->prepare($sql);
+        $statement->execute($args);
+
+        return $statement;
+    }
+
     public static function getInstance()
     {
         if (self::$instance == null) {
@@ -32,17 +44,5 @@ class PDOSingleton
         }
 
         return self::$instance;
-    }
-
-    public static function run($sql, ...$args)
-    {
-        if (!$args) {
-            return self::$instance->query($sql);
-        }
-
-        $statement = self::$instance->prepare($sql);
-        $statement->execute($args);
-
-        return $statement;
     }
 }
