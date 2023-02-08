@@ -1,0 +1,20 @@
+a {
+    font-weight: bold;
+    color: rebeccapurple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: mediumpurple;
+}
+
+.custom-button {
+    color: white;
+    background-color: rebeccapurple;
+    padding: 10px;
+}
+
+.custom-button:hover {
+    background-color: mediumpurple;
+    color: white;
+}
