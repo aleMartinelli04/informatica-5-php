@@ -12,4 +12,4 @@ if ($name && $surname && $cf && $registered) {
     echo "Error: missing data";
 }
 
-header("Location: index.php");
+header("Location: index.html");

@@ -1,0 +1,23 @@
+body {
+    background-color: whitesmoke;
+}
+
+.btn {
+    padding: 10px 15px;
+}
+
+.btn-orange {
+    background-color: orange;
+    color: whitesmoke;
+    padding: 10px 15px;
+}
+
+.btn-ok {
+    background-color: mediumorchid;
+    color: whitesmoke;
+}
+
+.btn-ok:hover {
+    color: whitesmoke;
+    background-color: darkorchid;
+}
