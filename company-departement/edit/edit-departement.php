@@ -17,7 +17,7 @@ if (!isset($_POST['submit'])) {
         DBCompany::run("UPDATE departement SET departementName = ?, departementLocation = ? WHERE id = ?",
             $departementName, $departementLocation, $_GET['id']);
 
-        header("Location: ../list/list-departements.php");
+        header("Location: ../list/list-artists.php");
     }
 }
 ?>

@@ -5,4 +5,4 @@ require "../db.php";
 
 DBCompany::run("DELETE FROM employee WHERE id = ?", $employee_id);
 
-header("Location: ../list/list-employees.php");
+header("Location: ../list/list-films.php");

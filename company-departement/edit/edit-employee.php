@@ -19,7 +19,7 @@ if (!isset($_POST['submit'])) {
         DBCompany::run("UPDATE employee SET firstName = ?, lastName = ?, departement_id = ? WHERE id = ?",
             $firstName, $lastName, $departement, $_GET['id']);
 
-        header("Location: ../list/list-employees.php");
+        header("Location: ../list/list-films.php");
     }
 }
 ?>
