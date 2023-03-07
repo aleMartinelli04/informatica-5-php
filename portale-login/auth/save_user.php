@@ -50,6 +50,6 @@ echo "foto: " . $foto;
         DB::run("INSERT INTO utenti (nome, cognome, email, password, codiceFiscale, foto, informazioni) VALUES (?, ?, ?, ?, ?, ?, ?)",
             $nome, $cognome, $email, $password, $codiceFiscale, $foto, $info);
         echo "Registrazione avvenuta con successo!";
-        echo '<a href="../profile.php">Vai al profilo</a>';
+        echo '<a href="../home.php">Vai al profilo</a>';
     }
 //}

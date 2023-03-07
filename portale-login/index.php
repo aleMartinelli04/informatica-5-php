@@ -52,7 +52,7 @@ if (!empty($_POST)) {
                     "password" => $password
                 ];
 
-                header("Location: profile.php");
+                header("Location: home.php");
             }
         }
     }

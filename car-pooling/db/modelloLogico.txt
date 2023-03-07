@@ -1,0 +1,14 @@
+Utente(id, nome, cognome, email, numTelefono)
+UtenteAutista(utente, numPatente, scadenzaPatente, foto)
+UtentePasseggero(utente, documento)
+
+Automobile(utente, marca, modello, targa, numPosti)
+
+Feedback(id, voto, giudizio, autista, passeggero)
+FeedbackAutista(feedback)
+FeedbackPasseggero(feedback)
+
+Viaggio(id, autista, cittaPartenza, cittaArrivo, dataPartenza, costo, tempo, prenotabile, dettagli)
+Prenotazioni(viaggio, passeggero)
+
+Sosta(id, viaggio, luogo)
