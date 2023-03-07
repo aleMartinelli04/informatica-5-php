@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION['userId'])) {
+    header('Location: ../index.php');
+}
+
+$id = $_SESSION['userId'];
+
+require '../db/db.php';
+
+$isPassenger = isPassenger($id);
+$isDriver = isDriver($id);
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -20,6 +33,22 @@
         <a href="../auth/logout.php">
             Logout <i class="fa-solid fa-right-from-bracket"></i>
         </a>
+
+        <br>
+
+        <a href="settings/settings-passeggero-activate.php">
+            Settings Passeggero <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+        <br>
+
+        <a href="settings/settings-autista-activate.php">
+            Settings Autista <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+        <br>
+        <?= 'pass: ' . ($isPassenger ? 'true' : 'false') ?>
+        <?= 'driver: ' . ($isDriver ? 'true' : 'false') ?>
     </div>
 </div>
 
