@@ -122,3 +122,13 @@ function insertOrUpdateCar($user, $marca, $modello, $targa, $numPosti)
     ]);
 
 }
+
+function createTravel($driver, $cittaPartenza, $cittaArrivo, $dataPartenza, $posti, $costo, $tempo, $prenotabile, $dettagli)
+{
+    $pdo = getPDO();
+
+    $statement = $pdo->prepare("INSERT INTO viaggio (autista, citta_partenza, citta_arrivo, data_partenza, posti, costo, tempo, prenotabile, dettagli) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $statement->execute([$driver, $cittaPartenza, $cittaArrivo, $dataPartenza, $posti, $costo, $tempo, $prenotabile, $dettagli]);
+
+    return $pdo->lastInsertId();
+}
