@@ -97,3 +97,28 @@ function isDriver($id)
 
     return $statement->fetch()['result'];
 }
+
+function getCar($id)
+{
+    $pdo = getPDO();
+
+    $statement = $pdo->prepare("SELECT automobile.* FROM automobile WHERE automobile.utente=?");
+    $statement->execute([$id]);
+
+    return $statement->fetch();
+}
+
+function insertOrUpdateCar($user, $marca, $modello, $targa, $numPosti)
+{
+    $pdo = getPDO();
+
+    $statement = $pdo->prepare("INSERT INTO automobile(utente, marca, modello, targa, num_posti) 
+                                    VALUES(?, ?, ?, ?, ?) 
+                                    ON DUPLICATE KEY UPDATE
+                                    utente=?, marca=?, modello=?, targa=?, num_posti=?");
+    $statement->execute([
+        $user, $marca, $modello, $targa, $numPosti,
+        $user, $marca, $modello, $targa, $numPosti
+    ]);
+
+}
