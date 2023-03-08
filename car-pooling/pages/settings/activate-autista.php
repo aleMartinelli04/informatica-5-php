@@ -7,4 +7,4 @@ require '../../db/db.php';
 
 createDriver($id, $license, $expiration);
 
-header('Location: settings-autista.php');
+header('Location: ../home.php');

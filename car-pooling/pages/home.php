@@ -39,7 +39,7 @@ $user = getUser($id);
                     Prenota Viaggio <i class="fa-solid fa-book"></i>
                 </a>
             <?php else: ?>
-                <a href="settings/settings-passeggero-activate.php" class="col">
+                <a href="settings/settings-passeggero.php" class="col">
                     Attiva Account Passeggero <i class="fa-solid fa-lock-open"></i>
                 </a>
             <?php endif; ?>
@@ -56,7 +56,7 @@ $user = getUser($id);
                     Dati Automobile <i class="fa-solid fa-car"></i>
                 </a>
             <?php else: ?>
-                <a href="settings/settings-autista-activate.php" class="col">
+                <a href="settings/settings-autista.php" class="col">
                     Attiva Account Autista <i class="fa-solid fa-lock-open"></i>
                 </a>
             <?php endif; ?>
@@ -79,10 +79,6 @@ $user = getUser($id);
             <p>Benvenuto, <b><?= $user['nome'] . ' ' . $user['cognome'] ?></b></p>
             <p><b>Email:</b> <?= $user['email'] ?></p>
             <p><b>Numero Telefono:</b> <?= $user['num_telefono'] ?></p>
-
-            <?php if ($isDriver): ?>
-                <p>Ciao</p>
-            <?php endif; ?>
         </div>
     </div>
 </div>

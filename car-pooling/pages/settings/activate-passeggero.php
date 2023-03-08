@@ -6,4 +6,4 @@ require '../../db/db.php';
 
 createPassenger($id, $document);
 
-header('Location: settings-passeggero.php');
+header('Location: ../home.php');
