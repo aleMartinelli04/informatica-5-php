@@ -19,10 +19,10 @@ if (!$marca || !$modello || !$targa || !$numPosti) {
 
     header('Location: create_car.php');
 } else {
-    require '../db/db.php';
+    require '../../db/db.php';
 
     insertOrUpdateCar($id, $marca, $modello, $targa, $numPosti);
 
-    header('Location: home.php');
+    header('Location: ../home.php');
 }
 

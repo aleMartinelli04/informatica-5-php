@@ -7,7 +7,7 @@ if (!isset($_SESSION['userId'])) {
 
 $id = $_SESSION['userId'];
 
-require '../db/db.php';
+require '../../db/db.php';
 
 $isDriver = isDriver($id);
 
@@ -47,7 +47,7 @@ if (!$car) {
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- link to css -->
-    <link href="../style-car-pooling.css" rel="stylesheet" type="text/css">
+    <link href="../../style-car-pooling.css" rel="stylesheet" type="text/css">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/97de4ea36d.js" crossorigin="anonymous"></script>
@@ -95,6 +95,11 @@ if (!$car) {
             <!-- Button -->
             <div class="container">
                 <button type="submit" class="btn btn-dark w-100">Salva Automobile</button>
+            </div>
+
+            <!-- Back button -->
+            <div class="container">
+                <a href="../home.php" class="btn w-100 mt-3">Torna alla Home</a>
             </div>
         </form>
     </div>
